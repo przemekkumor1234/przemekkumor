@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- 1. Napisz program rysujący z gwiazdek ramkę o podanej wysokości i podstawie. -->
+
+    <form action="" method="POST">
+        <legend>Podaj wysokość ramki: </legend>
+        <input type="number" name="a">
+
+        <legend>Podaj szerokość: </legend>
+        <input type="number" name="b">
+
+        <input type="submit" value="Narysuj">
+    </form>
+
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector("form");
+        const div = document.querySelector(".wynik");
+
+        formularz.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            const wysokosc = document.querySelector('input[name="a"]').value*1;
+            const szerokosc = document.querySelector('input[name="b"]').value*1;
+
+            for(let i=1; i <= wysokosc; i++){
+                for(let j=1;  j<= szerokosc; j++){
+                    div.innerHTML += '*';
+                }
+                div.innerHTML += '<br>';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
