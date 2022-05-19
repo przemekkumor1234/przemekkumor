@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sprawdzenie()
+        {
+            if(document.getElementById('zaznaczenie').checked==true)
+            {
+                document.getElementById('kolor').disabled=false
+                document.getElementById('wesja').disabled=false
+                document.getElementById('Ilość HP').disabled=false
+                
+                
+            } else{
+                window.alert('zablokowano');
+                document.getElementById('kolor').disabled=true
+                document.getElementById('wersja').disabled=true
+                document.getElementById('Ilość HP').disabled=true
+            }
+        }
+    </script>
+    <form>
+        <div>
+        Marka <input type="text">
+        </div>
+        <div>
+        Model <input type="text">
+        </div>
+        <div>
+        <input type="checkbox" id="zaznaczenie" onclick="sprawdzenie()">
+        </div>
+        <div>
+        Kolor <input type="text" id="kolor" disabled="true">
+        </div>
+        Wersja <input type="text" id="wersja" disabled="true">
+        
+        
+        
+    </form>
+</body>
+</html>
