@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Napisz skrypt zawierający funkcję przyjmującą dwa argumenty i zwracającą w wyniku działania sumę tych argumentów podniesionych do trzeciej potęgi. Trzecia potęga powinna być obliczana za pomocą funkcji zagnieżdżonej. -->
+
+    <form action="" method="POST">
+        <input type="number" name="liczba1" placeholder="Podaj liczbe nr.1: ">
+        <input type="number" name="liczba2" placeholder="Podaj liczbe nr.2: ">
+        <input type="submit" value="Oblicz">
+    </form>
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector("form");
+        const div = document.querySelector(".wynik");
+
+        function sumuj(a,b){
+            return (`Suma ${a} i ${b} wynosi ${Math.pow(a + b, 3)}`);
+        }
+
+        formularz.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const a = document.querySelector('input[name="liczba1"]').value*1;
+            const b = document.querySelector('input[name="liczba2"]').value*1;
+
+            div.textContent = sumuj(a, b);
+        })
+    </script>
+</body>
+</html>
