@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 2. Korzystając z pętli for, napisz skrypt wyświetlający na ekranie liczby z podanego przez użytkownika przedziału podzielne przez 5.. -->
+
+    <div class="container">
+
+        <h1>Zadanie 2</h1>
+        <form action="" method="POST">
+            <input type="number" name="a" placeholder="Podaj początek przedziału: ">
+            <input type="number" name="b" placeholder="Podaj koniec przedziału: ">
+
+            <div class="submit-wynik-container">
+                <input type="submit" value="Sprawdź">
+                <div class="wynik"></div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script>
+        const formularz = document.querySelector("form");
+        const div = document.querySelector(".wynik");
+
+        formularz.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            const poczatek = document.querySelector('input[name="a"]').value*1;
+            const koniec = document.querySelector('input[name="b"]').value*1;
+
+            for(let i=poczatek; i<koniec; i++){
+                if(i%5==0){
+                    div.textContent += i + ', ';
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
